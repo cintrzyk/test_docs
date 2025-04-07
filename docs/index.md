@@ -8,35 +8,51 @@ nav_order: 1
 
 Welcome! This is the internal developer documentation for the project. Here you'll find everything from system architecture to deployment guides and workflows.
 
-Lorem ipsum dolor sit amet, `<inline code snippet>` adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+This documentation site is built using [Jekyll](https://jekyllrb.com/) with the [Just the Docs](https://just-the-docs.github.io/just-the-docs/) theme.
 
-## Heading with `<inline code snippet>` in it.
+## 🔧 Prerequisites
 
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
+To run and develop the documentation locally, you'll need:
+
+- Ruby
+- Bundler
+
+## 🚀 Running the Site Locally
+
+Navigate into the `/docs` folder, and run:
+
+```bash
+bundle install
+bundle exec jekyll serve --livereload
 ```
 
+Once it's running, open your browser at:
+http://localhost:4000/test_docs/
 
-```ruby
-a = 1
+## 📝 Adding New Pages
 
-class Name
-  def name
-    puts "Hello, #{name}"
-  end
-end
+Create a new Markdown file (.md) inside the `docs/pages/` directory.
+
+Add front matter at the top of the file:
+
+```markdown
+---
+layout: default
+title: New Page Title
+---
 ```
 
-```mermaid
-graph TD;
-    accTitle: the diamond pattern
-    accDescr: a graph with four nodes: A points to B and C, while B and C both point to D
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
+## 🚀 Deploying to GitHub Pages
+
+The site is deployed automatically using GitHub Actions.
+Make sure your changes are pushed to the correct branch (e.g., master) and GitHub will handle the deployment.
+
+## 📁 Project Structure
+
+`pages/` – additional Markdown pages
+
+`_config.yml` – Jekyll configuration
+
+`_layouts/`, `_includes/` – custom layout templates if needed
+
+`_site/` – auto-generated output (should not be committed)

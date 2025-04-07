@@ -1,6 +1,6 @@
 title: Project Documentation
 theme: just-the-docs
-
+baseurl: '/test_docs'
 logo: './assets/logo.png'
 enable_copy_code_button: true
 mermaid:
